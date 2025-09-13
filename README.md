@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team Dominators</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="logo.jpg"> 
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #0f172a, #1e293b, #111827);
+      background-attachment: fixed;
+    }
+    @media (max-width: 640px) {
+      body {
+        background: linear-gradient(to bottom, #1a1a2e, #16213e, #0f3460);
+      }
+    }
+    .glow-text {
+      text-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+    }
+    .neon-btn {
+      background: transparent;
+      border: 2px solid #6366f1;
+      color: #6366f1;
+      transition: all 0.3s ease;
+      border-radius: 0.75rem;
+      width: 100%;
+    }
+    .neon-btn:hover {
+      background: #6366f1;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+    }
+    .card {
+      background: rgba(30, 41, 59, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 180px;
+      width: 100%;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    }
+    .logo {
+      max-width: 100px;
+      margin: 0 auto 1.5rem;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 20;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header a {
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    .header a:hover {
+      opacity: 0.8;
+    }
+    .menu-icon {
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+    }
+    .social-buttons a {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+    }
+    @media (max-width: 640px) {
+      h1, h2 {
+        font-size: 1.5rem;
+      }
+      .neon-btn {
+        font-size: 1rem;
+        padding: 0.75rem;
+      }
+      .card {
+        height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center text-white">
+  <!-- Header with menu icon and clickable title -->
+  <div class="header">
+    <div class="header-left">
+      <i class="fas fa-bars menu-icon"></i>
+      <a href="#" onclick="goHome()">Team Dominators</a>
+    </div>
+  </div>
+
+  <!-- Welcome Section -->
+  <section id="welcome" class="w-full max-w-md text-center px-4 mt-16">
+    <img src="logo.jpg" alt="Team Dominators Logo" class="logo rounded-full shadow-lg" />
+    <h1 class="text-3xl sm:text-4xl font-bold glow-text mb-6">Welcome to Team Dominators</h1>
+    <p class="opacity-80 mb-8 text-sm sm:text-base">"Victory is just a respawn away!"</p>
+    <button onclick="enterMain()" class="neon-btn px-8 py-3 text-lg">Enter</button>
+  </section>
+
+  <!-- Main Dashboard Section -->
+  <section id="dashboard" class="hidden w-full px-4 py-10 mt-16">
+    <div class="text-center mb-6">
+      <img src="logo.jpg" alt="Team Dominators Logo" class="logo rounded-full shadow-lg" />
+    </div>
+    <h2 class="text-2xl sm:text-3xl font-bold text-center glow-text mb-8">Team Dominators Hub</h2>
+    <div class="grid grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
+     <div class="card rounded-xl">
+  <h3 class="text-lg font-semibold mb-3">Guild Join Request</h3>
+  <a href="https://forms.gle/m1csiDJf6b5Hu2Re9" target="_blank" class="neon-btn flex items-center justify-center">
+    Join
+  </a>
+</div>
+
+      <div class="card rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">Guild Members</h3>
+        <button class="neon-btn">View</button>
+      </div>
+      <div class="card rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">Guild Rules</h3>
+        <button class="neon-btn">Check</button>
+      </div>
+      <div class="card rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">Join Tournament</h3>
+        <button class="neon-btn">Participate</button>
+      </div>
+    </div>
+
+    <div class="social-buttons flex justify-center gap-4 mt-10">
+      <a href="https://discord.gg/mur5tz95" target="_blank" class="neon-btn flex items-center gap-2"><i class="fab fa-discord"></i> Discord</a>
+      <a href="https://youtube.com/@dominatorslive?si=O2kh1z4PfSTezQL_" target="_blank" class="neon-btn flex items-center gap-2"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="https://www.instagram.com/dominators_offic?igsh=MXB4MjFzd2VuYW42Yg==" target="_blank" class="neon-btn flex items-center gap-2"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+  </section>
+
+  <script>
+    function enterMain() {
+      document.getElementById('welcome').classList.add('hidden');
+      document.getElementById('dashboard').classList.remove('hidden');
+      window.scrollTo(0,0);
+    }
+    function goHome() {
+      document.getElementById('dashboard').classList.add('hidden');
+      document.getElementById('welcome').classList.remove('hidden');
+      window.scrollTo(0,0);
+    }
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team Dominators</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="logo.jpg"> 
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #0f172a, #1e293b, #111827);
+      background-attachment: fixed;
+    }
+    @media (max-width: 640px) {
+      body {
+        background: linear-gradient(to bottom, #1a1a2e, #16213e, #0f3460);
+      }
+    }
+    .glow-text {
+      text-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+    }
+    .neon-btn {
+      background: transparent;
+      border: 2px solid #6366f1;
+      color: #6366f1;
+      transition: all 0.3s ease;
+      border-radius: 0.75rem;
+      width: 100%;
+    }
+    .neon-btn:hover {
+      background: #6366f1;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+    }
+    .card {
+      background: rgba(30, 41, 59, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 180px;
+      width: 100%;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    }
+    .logo {
+      max-width: 100px;
+      margin: 0 auto 1.5rem;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 20;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header a {
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    .header a:hover {
+      opacity: 0.8;
+    }
+    .menu-icon {
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+    }
+    .social-buttons a {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+    }
+    @media (max-width: 640px) {
+      h1, h2 {
+        font-size: 1.5rem;
+      }
+      .neon-btn {
+        font-size: 1rem;
+        padding: 0.75rem;
+      }
+      .card {
+        height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center text-white">
+  <!-- Header with menu icon and clickable title -->
+  <div class="header">
+    <div class="header-left">
+      <i class="fas fa-bars menu-icon"></i>
+      <a href="#" onclick="goHome()">Team Dominators</a>
+    </div>
+  </div>
+
+  <!-- Welcome Section -->
+  <section id="welcome" class="w-full max-w-md text-center px-4 mt-16">
+    <img src="logo.jpg" alt="Team Dominators Logo" class="logo rounded-full shadow-lg" />
+    <h1 class="text-3xl sm:text-4xl font-bold glow-text mb-6">Welcome to Team Dominators</h1>
+    <p class="opacity-80 mb-8 text-sm sm:text-base">"Victory is just a respawn away!"</p>
+    <button onclick="enterMain()" class="neon-btn px-8 py-3 text-lg">Enter</button>
+  </section>
+
+  <!-- Main Dashboard Section -->
+  <section id="dashboard" class="hidden w-full px-4 py-10 mt-16">
+    <div class="text-center mb-6">
+      <img src="logo.jpg" alt="Team Dominators Logo" class="logo rounded-full shadow-lg" />
+    </div>
+    <h2 class="text-2xl sm:text-3xl font-bold text-center glow-text mb-8">Team Dominators Hub</h2>
+    <div class="grid grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
+     <div class="card rounded-xl">
+  <h3 class="text-lg font-semibold mb-3">Guild Join Request</h3>
+  <a href="https://forms.gle/m1csiDJf6b5Hu2Re9" target="_blank" class="neon-btn flex items-center justify-center">
+    Join
+  </a>
+</div>
+
+      <div class="card rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">Guild Members</h3>
+        <button class="neon-btn">View</button>
+      </div>
+      <div class="card rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">Guild Rules</h3>
+        <button class="neon-btn">Check</button>
+      </div>
+      <div class="card rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">Join Tournament</h3>
+        <button class="neon-btn">Participate</button>
+      </div>
+    </div>
+
+    <div class="social-buttons flex justify-center gap-4 mt-10">
+      <a href="https://discord.gg/mur5tz95" target="_blank" class="neon-btn flex items-center gap-2"><i class="fab fa-discord"></i> Discord</a>
+      <a href="https://youtube.com/@dominatorslive?si=O2kh1z4PfSTezQL_" target="_blank" class="neon-btn flex items-center gap-2"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="https://www.instagram.com/dominators_offic?igsh=MXB4MjFzd2VuYW42Yg==" target="_blank" class="neon-btn flex items-center gap-2"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+  </section>
+
+  <script>
+    function enterMain() {
+      document.getElementById('welcome').classList.add('hidden');
+      document.getElementById('dashboard').classList.remove('hidden');
+      window.scrollTo(0,0);
+    }
+    function goHome() {
+      document.getElementById('dashboard').classList.add('hidden');
+      document.getElementById('welcome').classList.remove('hidden');
+      window.scrollTo(0,0);
+    }
+  </script>
+</body>
+</html>
